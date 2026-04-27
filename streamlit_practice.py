@@ -4,7 +4,7 @@ import pandas as pd
 # Title of the app
 st.title("My First Streamlit App")
 
-# Writing text is easy
+# Writing text using write function
 st.write("Here is some data from a CSV file:")
 
 # Displaying a dataframe (it will be interactive!)
@@ -36,8 +36,18 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.header("Column 1")
-    st.image("https://placekitten.com/200/200")
+    st.image("https://img.freepik.com/free-photo/closeup-shot-beautiful-ginger-domestic-kitten-sitting-white-surface_181624-35913.jpg?semt=ais_hybrid&w=740&q=80")
 
 with col2:
     st.header("Column 2")
-    st.write("Some descriptive text over here.")
+    st.write("Some descriptive text over here. this is another column.")
+
+#visualising data
+import numpy as np
+chart_data = pd.DataFrame(np.random.randn(20, 3), columns=['a', 'b', 'c'])
+# Built-in quick charts
+st.line_chart(chart_data)
+
+# Map visualization
+map_data = pd.DataFrame({'lat': [37.77], 'lon': [-122.41]})
+st.map(map_data)
